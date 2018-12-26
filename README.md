@@ -94,3 +94,4 @@
 This note is to demonstrate how we can leverage fluentd and its s3 plugins to upload necessary logs into oci object storage. Future actions are needed for production.
 * Push or Pull the updated images from OCIR of oracle OCI. So we can keep updating new docker images.Please refer [my another note](https://www.henryxieblogs.com/2018/10/how-to-pushpull-docker-images-into.html)
 * Update EFK stack to OCIR images instead of k8s.gcr.io . As fluentd works as daemonset, so every worker node will collect specific we are looking for (ie nginx access logs)
+* Put fluent.conf into the configmap of K8S, so it would safe and easy to update
