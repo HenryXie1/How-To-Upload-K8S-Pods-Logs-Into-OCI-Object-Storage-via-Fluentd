@@ -27,7 +27,7 @@
  ```
  $gem install fluent-plugin-s3 -v "0.8.8"
  ```
- * modify the fluent.conf file. Add nginx controller logs and s3 config to upload logs to OCI. Please refer config details on [fluent official doc](https://docs.fluentd.org/v1.0/articles/config-file). Test the conf file via $fluentd -v fluent.conf --dry-run . Fix all error of dry-run before we commit changes to docker images. fluent.conf Example is like
+ * Modify the fluent.conf file. Add nginx controller logs and s3 config to upload logs to OCI. Please refer config details on [fluent official doc](https://docs.fluentd.org/v1.0/articles/config-file). Test the conf file via $fluentd -v fluent.conf --dry-run . Fix all error of dry-run before we commit changes to docker images. fluent.conf Example is like
 
 ```
 # This is the root config file, which only includes components of the actual configuration
@@ -91,6 +91,6 @@
   iridizestage-2018122603_0.gz
   ```
 ### Conclusion
-This note is to demostrate how we can leverage fluentd and its s3 plugins to upload necessary logs into oci object storage. Future actions are needed for production.
+This note is to demonstrate how we can leverage fluentd and its s3 plugins to upload necessary logs into oci object storage. Future actions are needed for production.
 * Push or Pull the updated images into OCIR of oracle OCI. So we can keep updating new docker images.Please refer [my another note](https://www.henryxieblogs.com/2018/10/how-to-pushpull-docker-images-into.html)
 * Update EFK stack to OCIR images instead of k8s.gcr.io . As fluentd works as daemonset, so every worker node will collect specific we are looking for (ie nginx access logs)
