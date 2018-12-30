@@ -88,7 +88,7 @@
   ```
   * check OCI object storage console to see some logs are uploaded. Example is like
   ```
-  iridizestage-accesslogs/ts=20181230-09/hostname=foolish-antelope-fluentd-es-dvhkn/accesslogs-0.gz
+  iridizestage/ts=20181230-09/hostname=foolish-antelope-fluentd-es-dvhkn/accesslogs-0.gz
   ```
 ### Conclusion
 This note is to demonstrate how we can leverage fluentd and its s3 plugins to upload necessary logs into oci object storage. Future actions are needed for production.
