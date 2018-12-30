@@ -65,10 +65,10 @@
   s3_region us-ashburn-1
   s3_endpoint https://espsnonprodint.compat.objectstorage.us-ashburn-1.oraclecloud.com
   check_apikey_on_start false
-  path iridizestage-
+  path iridizestage
   buffer_path /var/log/fluent/s3
-  s3_object_key_format %{path}%{time_slice}_%{index}.%{file_extension}
-  time_slice_format %Y%m%d%H
+  s3_object_key_format "%{path}/ts=%{time_slice}/hostname=#{Socket.gethostname}/accesslogs-%{index}.%{file_extension}"
+  time_slice_format %Y%m%d-%H
   time_slice_wait 10m
   utc
  </match>
