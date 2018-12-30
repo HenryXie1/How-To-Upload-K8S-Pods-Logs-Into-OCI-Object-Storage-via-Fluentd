@@ -84,7 +84,7 @@
   * Delete the pod , let it restart ,check the logs for any error
   ```
   kubectl delete po -n devops <pod name>
-  kubectl logs -n devsops <new pod name>
+  kubectl logs -n devops <new pod name>
   ```
   * check OCI object storage console to see some logs are uploaded. Example is like
   ```
