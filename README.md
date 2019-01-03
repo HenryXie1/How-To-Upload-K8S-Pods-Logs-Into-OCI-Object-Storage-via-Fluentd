@@ -23,7 +23,7 @@
  ```
  $gem install aws-sdk-2.3.22.gem aws-sdk-2.3.22.gem
  ```
- * When you we get into the pod, we install fluent-plugin-s3 version 0.8.8. We avoid the latest verion of this plugin as it needs the latest aws ruby sdk. Please refer [the plugin github link](https://github.com/fluent/fluent-plugin-s3)
+ * When we get into the pod, we install fluent-plugin-s3 version 0.8.8. We avoid the latest verion of this plugin as it needs the latest aws ruby sdk. Please refer [the plugin github link](https://github.com/fluent/fluent-plugin-s3)
  ```
  $gem install fluent-plugin-s3 -v "0.8.8"
  ```
