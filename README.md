@@ -4,6 +4,9 @@
 
 ### Preparation
 * Install EFK stack into the K8S cluster. Please refer [the doc](https://github.com/HenryXie1/How-To-Create-EFK-Elastic-Search-FluentD-Kibana-in-Kubernetes). Fluentd is created as daemonset in K8S ,so each worker node will have it up running to collect logs
+* Update the K8S pods logs locations to poinit to stdout
+  * As Fluentd collect all logs from pods via stdout , we need to update the locations of the logs we would like to upload
+  * ie we wanna collect access logs of apache or alert logs of DB, use  ln -sf   /proc/self/fd/1  /var/log/apache2/access_log . Please refer details in [another note](https://www.henryxieblogs.com/2019/02/tip-of-streaming-logs-to-stdout-for-k8s.html)
 
 ### Implementation
 * Build a new docker images with fluent plugin s3 which we can use OCI S3 compatible API to upload logs into object storage. Please refer [oci doc](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/s3compatibleapi.htm)
